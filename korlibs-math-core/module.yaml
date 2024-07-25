@@ -9,4 +9,4 @@ aliases:
 
 dependencies:
   - com.soywiz:korlibs-platform:6.0.0
-  - ../korlibs-number: exported
+  - com.soywiz:korlibs-number:6.0.0: exported
