@@ -8,6 +8,5 @@ aliases:
   - jvmAndAndroid: [jvm, android]
 
 dependencies:
-
-test-dependencies:
-
+  - com.soywiz:korlibs-platform:6.0.0
+  - ../korlibs-number: exported
