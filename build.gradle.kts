@@ -15,7 +15,7 @@ import java.util.*
 import java.util.concurrent.*
 
 plugins {
-    kotlin("multiplatform") version "2.0.0"
+    kotlin("multiplatform") version "2.0.10"
     id("com.android.library") version "8.2.2"
     id("org.jetbrains.kotlinx.kover") version "0.8.3" apply false
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.16.2"
@@ -34,10 +34,10 @@ var REAL_VERSION = System.getenv("FORCED_VERSION")
 
 //val REAL_VERSION = System.getenv("FORCED_VERSION") ?: "999.0.0.999"
 
-val JVM_TARGET = JvmTarget.JVM_1_8
-val JDK_VERSION = org.gradle.api.JavaVersion.VERSION_1_8
-//val JVM_TARGET = JvmTarget.JVM_11
-//val JDK_VERSION = org.gradle.api.JavaVersion.VERSION_11
+//val JVM_TARGET = JvmTarget.JVM_1_8 // @TODO: Java 8 won't support Apple M1 (no provided SDKs)
+//val JDK_VERSION = org.gradle.api.JavaVersion.VERSION_1_8
+val JVM_TARGET = JvmTarget.JVM_11
+val JDK_VERSION = org.gradle.api.JavaVersion.VERSION_11
 val GROUP = "com.soywiz"
 
 kotlin {
@@ -69,12 +69,6 @@ allprojects {
                 // 17 is latest at the current moment
                 languageVersion.set(JavaLanguageVersion.of(JDK_VERSION.majorVersion))
             })
-        }
-    }
-
-    kotlin {
-        androidTarget {
-            this.compilerOptions.jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 
