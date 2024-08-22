@@ -48,6 +48,13 @@ jobs:
       - { name: Setup Deno, uses: denoland/setup-deno@v1, with: { deno-version: "1.44.4" } }
       - { name: Set up JDK, uses: actions/setup-java@v4, with: { distribution: "${{ env.JAVA_DISTRIBUTION }}", java-version: "${{ env.JAVA_VERSION }}" } }
       - { name: Prepare Gradle, uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 } # https://github.com/gradle/actions/releases/tag/v4.0.0
+      - name: Cache Kotlin/Native .konan folder
+        uses: actions/cache@v4
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle*', '**/build.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-konan-
       - { name: Start gradle, run: ./gradlew }
       - { if: "${{ matrix.precompileTask }}", name: "Building ${{ matrix.precompileTask }} classes", run: "./gradlew --stacktrace ${{ matrix.precompileTask }}" }
       - { if: "${{ matrix.enableCodecov }}", name: "Upload coverage reports to Codecov", uses: "codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673", with: { token: "${{ secrets.CODECOV_TOKEN }}" } } # https://github.com/codecov/codecov-action/releases/tag/v4.5.0
