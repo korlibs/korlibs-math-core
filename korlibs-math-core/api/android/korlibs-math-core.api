@@ -131,9 +131,17 @@ public final class korlibs/math/MathKt {
 	public static final field PI2F F
 	public static final field PIF F
 	public static final fun almostEquals (DD)Z
+	public static final fun almostEquals (DDD)Z
 	public static final fun almostEquals (FF)Z
+	public static final fun almostEquals (FFF)Z
+	public static synthetic fun almostEquals$default (DDDILjava/lang/Object;)Z
+	public static synthetic fun almostEquals$default (FFFILjava/lang/Object;)Z
 	public static final fun almostZero (D)Z
+	public static final fun almostZero (DD)Z
 	public static final fun almostZero (F)Z
+	public static final fun almostZero (FF)Z
+	public static synthetic fun almostZero$default (DDILjava/lang/Object;)Z
+	public static synthetic fun almostZero$default (FFILjava/lang/Object;)Z
 	public static final fun betweenInclusive (DDD)Z
 	public static final fun closestMultipleOf (DD)D
 	public static final fun closestMultipleOf (II)I
