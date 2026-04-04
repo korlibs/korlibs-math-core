@@ -91,6 +91,7 @@ public final class korlibs/math/ILogKt {
 
 public abstract interface class korlibs/math/IsAlmostEquals {
 	public abstract fun isAlmostEquals (Ljava/lang/Object;D)Z
+	public static synthetic fun isAlmostEquals$default (Lkorlibs/math/IsAlmostEquals;Ljava/lang/Object;DILjava/lang/Object;)Z
 }
 
 public final class korlibs/math/IsAlmostEquals$DefaultImpls {
@@ -99,6 +100,7 @@ public final class korlibs/math/IsAlmostEquals$DefaultImpls {
 
 public abstract interface class korlibs/math/IsAlmostEqualsF {
 	public abstract fun isAlmostEquals (Ljava/lang/Object;F)Z
+	public static synthetic fun isAlmostEquals$default (Lkorlibs/math/IsAlmostEqualsF;Ljava/lang/Object;FILjava/lang/Object;)Z
 }
 
 public final class korlibs/math/IsAlmostEqualsF$DefaultImpls {
@@ -268,9 +270,9 @@ public abstract interface annotation class korlibs/math/annotations/ViewDslMarke
 
 public abstract interface class korlibs/math/interpolation/Easing {
 	public static final field Companion Lkorlibs/math/interpolation/Easing$Companion;
-	public abstract fun invoke (D)D
+	public fun invoke (D)D
 	public abstract fun invoke (F)F
-	public abstract fun invoke-ce6x77s (D)D
+	public fun invoke-ce6x77s (D)D
 }
 
 public final class korlibs/math/interpolation/Easing$Companion {
